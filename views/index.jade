@@ -2,14 +2,12 @@ extends layout
 
 block content
     h1= title
-    p Welcome to our test
+    p Welcome to PunchIN
 
-    #wrapper
-        
-        h2 User List
-            table
-                thead
-                    th UserName
-                    th Email
-                    th Delete?
-                tbody
+    if (!user)
+      a(href="/login") Login
+      br
+      a(href="/register") Register
+    if (user)
+      p You are currently logged in as #{user.username}
+      a(href="/logout") Logout
