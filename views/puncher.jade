@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    if(punch.punchin)
+        .jumbotron
+            h2.green You are Punched IN
+            h3
+                span#time-counter(data-current="#{now}", data-date="#{punch.date.getTime()}") 
+    else
+        .jumbotron
+            h2.red You are Punched OUT
+
+    form(role='form', action="/puncher",method="post", style='max-width: 300px;')
+      input(type='hidden', name="punchin", value="#{!punch.punchin}")
+
+      if(!punch.punchin)
+        button.btn.btn-default.green(type='submit') Punch IN
+      else
+        button.btn.btn-default.red(type='submit') Punch OUT

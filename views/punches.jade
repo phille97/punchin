@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 Manage Times
+
+    p Latest activity is shown at the top
+
+    ul
+      each day in days
+        li #{(new Date(day.day)).toISOString().slice(0,10)}
+          ul
+            each punch in day.punches
+              if punch.punchin
+                li.green <- #{punch.date.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
+              else
+                li.red -> #{punch.date.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
