@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# PunchIN documentation build configuration file, created by
-# sphinx-quickstart on Tue Jan 19 18:09:22 2016.
+# punchin documentation build configuration file, created by
+# sphinx-quickstart on Mon Jan 25 18:33:14 2016.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -18,22 +18,17 @@ import os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('..'))
+#sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-# needs_sphinx = '1.0'
+#needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-]
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,13 +39,13 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-# source_encoding = 'utf-8-sig'
+#source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'index'
 
 # General information about the project.
-project = u'PunchIN'
+project = u'punchin'
 copyright = u'2016, Philip Johansson'
 author = u'Philip Johansson'
 
@@ -59,7 +54,7 @@ author = u'Philip Johansson'
 # built documents.
 #
 # The short X.Y version.
-version = u'0.1'
+version = u'0.1dev'
 # The full version, including alpha/beta/rc tags.
 release = u'0.1dev'
 
@@ -72,9 +67,9 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-# today = ''
+#today = ''
 # Else, today_fmt is used as the format for a strftime call.
-# today_fmt = '%B %d, %Y'
+#today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -82,27 +77,27 @@ exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
-# default_role = None
+#default_role = None
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
-# add_function_parentheses = True
+#add_function_parentheses = True
 
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::).
-# add_module_names = True
+#add_module_names = True
 
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
-# show_authors = False
+#show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
-# modindex_common_prefix = []
+#modindex_common_prefix = []
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
-# keep_warnings = False
+#keep_warnings = False
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -204,7 +199,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PunchINdoc'
+htmlhelp_basename = 'punchindoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -226,7 +221,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PunchIN.tex', u'PunchIN Documentation',
+    (master_doc, 'punchin.tex', u'punchin Documentation',
      u'Philip Johansson', 'manual'),
 ]
 
@@ -256,7 +251,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'punchin', u'PunchIN Documentation',
+    (master_doc, 'punchin', u'punchin Documentation',
      [author], 1)
 ]
 
@@ -270,8 +265,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PunchIN', u'PunchIN Documentation',
-     author, 'PunchIN', 'One line description of project.',
+    (master_doc, 'punchin', u'punchin Documentation',
+     author, 'punchin', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -286,7 +281,3 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
-
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
