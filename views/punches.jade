@@ -1,16 +1,27 @@
 extends layout
 
 block content
-    h1 Manage Times
+    h1 Month <b>#{to.getMonth()+1}</b> - <b>#{to.getFullYear()}</b>
 
     p Latest activity is shown at the top
 
     ul
       each day in days
         li #{(new Date(day.day)).toISOString().slice(0,10)}
+          span.total #{day.total}
           ul
             each punch in day.punches
-              if punch.punchin
-                li.green <- #{punch.date.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
-              else
-                li.red -> #{punch.date.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
+              li
+                if(punch.out)
+                  a(href="/punch/#{punch._id}")
+                    span.green #{punch.in.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
+                    span.red  -> #{punch.out.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
+                else
+                  a(href="/puncher")
+                    if punch.in
+                      span.green #{punch.in.toISOString().replace(/[TZ]/g, " ").slice(0,19)}
+
+                a(href="/punch/#{punch._id}/delete")  Delete
+    a.btn(href="/punches/#{previous.getFullYear()}/#{previous.getMonth()+1}") #{previous.getFullYear()} - #{previous.getMonth()+1}
+    span <->
+    a.btn(href="/punches/#{next.getFullYear()}/#{next.getMonth()+1}") #{next.getFullYear()} - #{next.getMonth()+1}

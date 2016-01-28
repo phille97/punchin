@@ -14,3 +14,9 @@ a {
 .red {
     color: red;
 }
+
+.total {
+    color: gray;
+    margin-left: 2em;
+    font-weight: bold;
+}

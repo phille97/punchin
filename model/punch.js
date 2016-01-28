@@ -3,8 +3,8 @@ var mongoose = require('mongoose'),
     relationship = require("mongoose-relationship");
 
 var Punch = new Schema({
-    punchin: Boolean,
-    date: { type: Date, default: Date.now},
+    in: { type: Date, default: Date.now},
+    out: { type: Date, default: null},
     user: { type: Schema.ObjectId, ref: "User", childPath: "punches" }
 });
 Punch.plugin(relationship, { relationshipPathName: 'user' });

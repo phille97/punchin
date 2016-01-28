@@ -14,9 +14,11 @@ html
               a.navbar-brand(href='#') PunchIN
             ul.nav.navbar-nav
               li
-                a(href='/puncher') Start Punching!
+                a(href='/puncher').green Start Punching!
               li
-                a(href='/punches') Manage Times
+                a(href='/punch').green Add Manually
+              li
+                a(href='/punches') See Punches
             ul.nav.navbar-nav.navbar-right
               if (!user)
                 li

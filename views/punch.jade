@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 Manage Punch
+    p /punch/#{punch._id}
+    form(role='form', action='/punch/#{punch._id}', method='POST')
+      span <b>IN</b> MUST BE GREATER THEN <b>OUT</b>
+      br
+      span IN:
+        input(name="in", value="#{punch.in.toISOString().slice(0, 16)}", type="datetime-local")
+      span OUT:
+        input(name="out", value="#{punch.out.toISOString().slice(0, 16)}", type="datetime-local")
+      input(type="submit", value="Save")
+
+      if(punch._id != 'new')
+        a(href="/punch/#{punch._id}/delete") Delete

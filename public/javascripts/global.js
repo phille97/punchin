@@ -3,6 +3,21 @@
 
 
 
+
+
+function update_that_shit(currentTime, startTime, counter){
+       var msec = currentTime - startTime;
+       var hh = Math.floor(msec / 1000 / 60 / 60);
+       msec -= hh * 1000 * 60 * 60;
+       var mm = Math.floor(msec / 1000 / 60);
+       msec -= mm * 1000 * 60;
+       var ss = Math.floor(msec / 1000);
+       msec -= ss * 1000;
+
+       counter.innerHTML = `Elapsed time: ${hh} Hours ${mm} Minutes ${ss} Seconds`;
+}
+
+
 function start_et() {
    var counter = document.getElementById('time-counter');
    var currentTime = new Date(parseInt(counter.dataset.current));
@@ -14,16 +29,12 @@ function start_et() {
    }, 1000);
 
 
+   setTimeout(function(){
+       update_that_shit(currentTime, startTime, counter);
+   }, 0);
+  
    setInterval(function() {
-       var msec = currentTime - startTime;
-       var hh = Math.floor(msec / 1000 / 60 / 60);
-       msec -= hh * 1000 * 60 * 60;
-       var mm = Math.floor(msec / 1000 / 60);
-       msec -= mm * 1000 * 60;
-       var ss = Math.floor(msec / 1000);
-       msec -= ss * 1000;
-
-       counter.innerHTML = `Elapsed time: ${hh} Hours ${mm} Minutes ${ss} Seconds`;
+       update_that_shit(currentTime, startTime, counter);
    }, 1000);
 }
 
